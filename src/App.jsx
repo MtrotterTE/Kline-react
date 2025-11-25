@@ -3,8 +3,8 @@ import React, { useMemo, useState } from 'react';
 import NavigationRail from './components/NavigationRail.jsx';
 import KLineInboundTime from './components/KLineInboundTime.jsx';
 import KLineOutboundTime from './components/KLineOutboundTime.jsx';
-//import KLineOutboundSpeed from './components/KLineOutboundSpeed.jsx';
-//import KLineInboundSpeed from './components/KLineInboundSpeed.jsx';
+import KLineInboundSpeed from './components/KLineInboundSpeed.jsx';
+import KLineOutboundSpeed from './components/KLineOutboundSpeed.jsx';
 
 import './App.css'; // optional: if you want to put the layout CSS here
 
@@ -15,8 +15,8 @@ function App() {
     () => ({
       inboundTime: KLineInboundTime,
       outboundTime: KLineOutboundTime,
-      //outboundSpeed: KLineOutboundSpeed,
-      //inboundSpeed: KLineInboundSpeed,
+      inboundSpeed: KLineInboundSpeed,
+      outboundSpeed: KLineOutboundSpeed,
     }),
     [],
   );

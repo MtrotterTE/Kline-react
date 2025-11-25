@@ -2,7 +2,7 @@
 import React, { useMemo, useState } from 'react';
 import NavigationRail from './components/NavigationRail.jsx';
 import KLineInboundTime from './components/KLineInboundTime.jsx';
-//import KLineInboundTime from './components/KLineInboundTime.jsx';
+import KLineOutboundTime from './components/KLineOutboundTime.jsx';
 //import KLineOutboundSpeed from './components/KLineOutboundSpeed.jsx';
 //import KLineInboundSpeed from './components/KLineInboundSpeed.jsx';
 
@@ -14,7 +14,7 @@ function App() {
   const views = useMemo(
     () => ({
       inboundTime: KLineInboundTime,
-      //inboundTime: KLineInboundTime,
+      outboundTime: KLineOutboundTime,
       //outboundSpeed: KLineOutboundSpeed,
       //inboundSpeed: KLineInboundSpeed,
     }),

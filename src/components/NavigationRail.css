@@ -1,42 +1,54 @@
 /* src/components/NavigationRail.css */
-.navigation-rail {
-    width: 260px;
-    border-right: 1px solid #010101;
-    background-color: #27292b;
-    color: #f9f8f7;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .nav-buttons h1 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    color: #f9f8f7;
-  }
-  
-  .nav-buttons h2 {
-    margin-top: 16px;
-    margin-bottom: 8px;
-    font-size: 1.25rem;
-    color: #b8bdc2;
-  }
-  
-  .nav-btn {
-    border-radius: 4px;
-    border: 1px solid #444;
-    padding: 8px 12px;
-    text-align: left;
-    cursor: pointer;
-    background-color: #323437;
-    color: #f9f8f7;
-  }
-  
-  .nav-btn.active {
-    background-color: #f9f8f7;
-    color: #27292b;
-  }
-  
+div.navigation-rail {
+  margin: 0 16px 0 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  align-items: start;
+  align-self: stretch;
+  box-sizing: border-box;
+  min-width: 180px;
+  background-color: #27292b;
+  border-right: 3px solid #515559;
+  border-left: 3px solid #515559;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 16px;
+}
+
+.nav-buttons h1 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #b8bdc2;
+}
+
+.nav-buttons h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  color: #b8bdc2;
+}
+
+.nav-btn {
+  border-radius: 4px;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #a4a6a2;
+  color: #27292b;
+}
+
+.nav-btn.active, .nav-btn:hover {
+  background-color: #f9f8f7;
+}

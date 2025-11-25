@@ -14,7 +14,7 @@ import React, {
     isWithinDistance,
     getDistanceInFeet,
   } from "../utils/helpers.js";
-  import "./KLineOutboundTime.css"; // we'll copy your <style> into here
+  import "./KLineInboundTime.css"; // we'll copy your <style> into here
   
   function KLineOutboundTime() {
     // -----------------------
@@ -89,10 +89,19 @@ import React, {
         return graphData.filter((trip) =>
           trip.some((item) =>
             isWithinDistance(
+              item.latitude, 
+              item.longitude, 
+              locations[0].location.latitude, 
+              locations[0].location.longitude, 
+              350
+            ) 
+            &&
+            !isWithinDistance(
               item.latitude,
               item.longitude,
               trip[trip.length - 1].latitude,
-              trip[trip.length - 1].longitude
+              trip[trip.length - 1].longitude,
+              350
             )
           )
         );
@@ -107,13 +116,23 @@ import React, {
       return graphData.filter(
         (trip) =>
           trip.some((item) => item.date_pst === selectedDate) &&
-          trip.some((item, index) => {
-            if (index === 0) return false;
-            const prev = trip[index - 1];
-            return (
-              item.latitude !== prev.latitude || item.longitude !== prev.longitude
-            );
-          })
+          trip.some((item) =>
+            isWithinDistance(
+              item.latitude, 
+              item.longitude, 
+              locations[0].location.latitude, 
+              locations[0].location.longitude, 
+              350
+            ) 
+            &&
+            !isWithinDistance(
+              item.latitude,
+              item.longitude,
+              trip[trip.length - 1].latitude,
+              trip[trip.length - 1].longitude,
+              350
+            )
+          )
       );
     }, [allDatesMode, graphData, selectedDate]);
   
@@ -587,6 +606,7 @@ import React, {
                 .attr('d', line);
         });
 
+        setLocations(workingLocations);
         setTotalNumberOfFullTrips(totalTrips);
         setTotalDurationOfFullTrips(totalDuration);
 
@@ -814,7 +834,6 @@ import React, {
       westPortalDistance,
       stationDistances,
       intersectionDistances,
-      locations,
       currentTripIndex,
       allDatesMode,
       selectedDate,
@@ -1047,7 +1066,7 @@ import React, {
         </div>
   
         {/* Right Rail */}
-        <div className="rail pa-4">
+        <div className="rail right-rail pa-4">
           <h2 className="totals-header">Totals and Averages</h2>
           <div className="totals-wrapper">
             <div className="summary-box">

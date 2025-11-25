@@ -61,7 +61,7 @@ button:focus-visible {
     padding: 2em;
 }
 
-#app {
+#app, #root {
     max-width: 1680px;
     margin: 0 auto;
     padding: 0;
@@ -87,10 +87,15 @@ div.v-card {
     border-bottom-right-radius: 0;
     background-color: #f9f8f7;
     box-shadow: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 main.content {
     margin-right: 16px;
+    flex: unset;
+    overflow: unset;
+    width: 100%;
 }
 
 .rail .totals-header {
@@ -136,8 +141,8 @@ main.content {
 
 .app-layout {
     display: flex;
-    height: 100vh;
-    align-items: stretch;
+    min-height: 100vh;
+    align-items: flex-start;
 }
 
 .content {

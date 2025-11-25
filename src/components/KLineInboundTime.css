@@ -3,17 +3,20 @@
 }
 
 div.v-card-title {
-    padding-bottom: 4px;
+    padding: 4px 16px 4px 0;
     margin: 0 16px 12px;
     border-bottom: 1px solid #010101;
-    padding-left: 0;
     text-align: left;
     font-size: 1.5rem;
+    color: #010101;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .v-card-text div span {
     display: inline-block;
     max-width: 10rem;
+    color: #010101;
 }
 
 .v-card-text > div:first-of-type {
@@ -112,18 +115,81 @@ div.v-col {
     background-color: #f0f0f0;
     border-bottom: 1px solid #d3d3d3;
     border-radius: 3px;
+    margin: 0;
 }
 
 .summary-box p {
     padding: 8px 0;
     line-height: 1.125rem;
+    margin: 0;
 }
 
 .v-container.v-container {
     max-width: none;
+    width: 100%;
 }
 
 .date-button-container {
     padding-bottom: 16px;
     border-bottom: 1px solid #010101;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.date-button-container .v-btn, .zoom-controls .v-btn {
+    background-color: #f9f8f7;
+    color: #010101;
+    border: 1px solid #010101;
+    box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.05);
+    margin-right: 8px;
+}
+
+.date-button-container .v-btn--next, .date-button-container .v-btn--prev {
+    color: #f9f8f7;
+    background-color: #708090;
+}
+
+.date-button-container .v-btn--all {
+    background-color: #87CEEB;
+}
+
+.date-button-container .v-btn:active, .date-button-container .v-btn:hover, .zoom-controls .v-btn:active, .zoom-controls .v-btn:hover {
+    background-color: #d3d3d3;
+}
+
+.d-flex {
+    display: flex;
+    width: 100%;
+}
+
+.v-btn.v-btn--small {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#line-graph g, #line-graph path.domain, #line-graph path.range, #line-graph g.tick line {
+    stroke: #010101;
+}
+
+#line-graph g text {
+    fill: #010101;
+    stroke: none;
+}
+
+.zoom-controls {
+    margin: 16px 0 0 16px;
+}
+
+.right-rail {
+    padding: 0 16px 16px;
+}
+
+.rail.right-rail .totals-header {
+    padding: 4px 0;
+    margin: 0;
+    text-align: left;
+    font-size: 1.25rem;
+    color: #010101;
+    line-height: 1.9;
+    font-weight: 500;
 }

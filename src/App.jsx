@@ -1,7 +1,7 @@
 // src/App.jsx
 import React, { useMemo, useState } from 'react';
 import NavigationRail from './components/NavigationRail.jsx';
-import KLineOutboundTime from './components/KLineOutboundTime.jsx';
+import KLineInboundTime from './components/KLineInboundTime.jsx';
 //import KLineInboundTime from './components/KLineInboundTime.jsx';
 //import KLineOutboundSpeed from './components/KLineOutboundSpeed.jsx';
 //import KLineInboundSpeed from './components/KLineInboundSpeed.jsx';
@@ -13,7 +13,7 @@ function App() {
 
   const views = useMemo(
     () => ({
-      outboundTime: KLineOutboundTime,
+      inboundTime: KLineInboundTime,
       //inboundTime: KLineInboundTime,
       //outboundSpeed: KLineOutboundSpeed,
       //inboundSpeed: KLineInboundSpeed,
@@ -21,7 +21,7 @@ function App() {
     [],
   );
 
-  const CurrentComponent = views[activeView] ?? KLineOutboundTime;
+  const CurrentComponent = views[activeView] ?? KLineInboundTime;
 
   return (
     <div className="app-layout">

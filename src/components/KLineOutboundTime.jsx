@@ -182,6 +182,8 @@ import React, {
         ? `${avgSeconds.toFixed(2)} (seconds)`
         : "No intersection data";
     }, [totalTimeAtIntersections, totalNumVehiclesAtIntersections]);
+
+    console.log("Total Duration of Full Trips:", totalDurationOfFullTrips);
   
     const averageFullTripDurationDisplay = useMemo(() => {
       const avgMinutes =
@@ -268,7 +270,7 @@ import React, {
 
             // Array of location objects (intersections and stations), includes total time at each location (timeAtStop) and total number of vehicles (numVehicles)
             setLocations([
-                { isIntersection: false, name: "Balboa Park BART Mezzanine Level", location: stopsArray[0].outbound.stops[0].location, timeAtStop: 0, numVehicles: 0 },
+                { isIntersection: false, name: "Balboa Park BART Mezzanine Level", location: stopsArray[0].outbound.stops[19].location, timeAtStop: 0, numVehicles: 0 },
                 { isIntersection: true, name: "Ocean Ave & Balboa Park", location: stopsArray[0].intersections.stops[3].location, timeAtStop: 0, numVehicles: 0 },
                 { isIntersection: true, name: "Howlth St & Ocean Ave", location: stopsArray[0].intersections.stops[1].location, timeAtStop: 0, numVehicles: 0 },
                 { isIntersection: false, name: "Ocean Ave/CCSF Pedestrian Bridge", location: stopsArray[0].outbound.stops[18].location, timeAtStop: 0, numVehicles: 0 },
@@ -572,7 +574,7 @@ import React, {
                         const tripDuration = point.cumulativeTime - leavingFirstTerminalStation.cumulativeTime;
                         leavingFirstTerminalStation = null; // reset for next trip
                         totalTrips += 1;
-                            totalDuration += tripDuration;
+                        totalDuration += tripDuration;
                     }
                 }
 
